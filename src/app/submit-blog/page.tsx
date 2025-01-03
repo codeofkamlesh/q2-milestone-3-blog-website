@@ -87,20 +87,20 @@ export default function SubmitBlogPage() {
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center text-heading">Submit Your Colorful AI Blog Post</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center text-heading">Submit Your AI Blog Here</h1>
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
           <strong className="font-bold">Error: </strong>
           <span className="block sm:inline">{error}</span>
         </div>
       )}
-      <form onSubmit={handleSubmit} className="space-y-6 bg-black p-6 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-gray-200 p-6 rounded-lg shadow-md">
         <div>
-          <label htmlFor="title" className="block text-sm font-medium text-heading mb-1 text-white">
+          <label htmlFor="title" className="block text-sm font-medium text-heading mb-1 text-black">
             Title
           </label>
           <div className="relative">
-            <FileText className="absolute left-3  h-5 w-5 text-gray-400" />
+            <FileText className="absolute left-3  h-5 w-5 text-black" />
             <input
               type="text"
               id="title"
@@ -115,11 +115,11 @@ export default function SubmitBlogPage() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label htmlFor="author" className="block text-sm font-medium text-heading mb-1 text-white">
+            <label htmlFor="author" className="block text-sm font-medium text-heading mb-1 text-black">
               Author
             </label>
             <div className="relative">
-              <User className="absolute left-3  h-5 w-5 text-gray-400" />
+              <User className="absolute left-3  h-5 w-5 text-black" />
               <input
                 type="text"
                 id="author"
@@ -133,11 +133,11 @@ export default function SubmitBlogPage() {
             </div>
           </div>
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-heading mb-1 text-white">
+            <label htmlFor="email" className="block text-sm font-medium text-heading mb-1 text-black">
               Email
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 h-5 w-5 text-gray-400" />
+              <Mail className="absolute left-3 h-5 w-5 text-black" />
               <input
                 type="email"
                 id="email"
@@ -152,7 +152,7 @@ export default function SubmitBlogPage() {
           </div>
         </div>
         <div>
-          <label htmlFor="content" className="block text-sm font-medium text-heading mb-1 text-white">
+          <label htmlFor="content" className="block text-sm font-medium text-heading mb-1 text-black">
             Content
           </label>
           <textarea
@@ -167,7 +167,7 @@ export default function SubmitBlogPage() {
           ></textarea>
         </div>
         <div>
-          <label htmlFor="image" className="block text-sm font-medium text-heading mb-1 text-white">
+          <label htmlFor="image" className="block text-sm font-medium text-heading mb-1 text-black">
             Image (Max 5MB)
           </label>
           <div className="flex items-center space-x-4">
@@ -213,10 +213,9 @@ export default function SubmitBlogPage() {
           disabled={isSubmitting}
           className="w-full bg-white text-black py-2 px-4 rounded-md hover:bg-primary transition-colors duration-300 disabled:opacity-50"
         >
-          {isSubmitting ? 'Submitting...' : 'Submit Colorful Blog Post'}
+          {isSubmitting ? 'Submitting...' : 'Submit Blog'}
         </button>
       </form>
     </div>
   )
 }
-

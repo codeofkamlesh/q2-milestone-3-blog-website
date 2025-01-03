@@ -8,14 +8,14 @@ export default function Home() {
 
   return (
     <div className="space-y-12">
-      <section className="bg-black from-primary to-secondary text-white py-20 rounded-lg">
+      <section className="bg-[url('/cover.jpg')] bg-cover h-[400px] from-primary to-secondary text-white py-20 rounded-lg">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Welcome to AI Insights</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">Welcome to The World of AI</h1>
             <p className="text-xl md:text-2xl mb-8">Exploring the vibrant world of Artificial Intelligence</p>
-            <Link 
-              href="/blog" 
-              className="bg-slate-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300"
+            <Link
+              href="/blog"
+              className="bg-yellow-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-opacity-90 transition-colors duration-300"
             >
               Explore Our Blog
             </Link>
@@ -25,7 +25,7 @@ export default function Home() {
 
       <section className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl font-bold text-heading">Latest AI Insights</h2>
+          <h2 className="text-3xl font-bold text-heading">Latest AI Updates</h2>
           <Link href="/blog" className="text-primary hover:text-secondary transition-colors">
             View all posts
           </Link>

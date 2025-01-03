@@ -32,11 +32,11 @@ export default function BlogPostCard({ post }: { post: BlogPost }) {
 
   return (
     <article className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-      <Image 
+      <Image
         src={post.image || "/placeholder.svg?height=200&width=400"}
-        alt={post.title} 
-        width={400} 
-        height={200} 
+        alt={post.title}
+        width={400}
+        height={200}
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
@@ -57,7 +57,7 @@ export default function BlogPostCard({ post }: { post: BlogPost }) {
         </div>
         <p className="text-text mb-4">{post.excerpt}</p>
         <div className="flex justify-between items-center">
-          <Link href={`/blog/${post.id}`} className="inline-block bg-secondary text-white px-4 py-2 rounded-lg hover:bg-primary transition-colors">
+          <Link href={`/blog/${post.id}`} className="inline-block bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-primary transition-colors">
             Read more
           </Link>
           <button

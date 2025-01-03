@@ -32,9 +32,9 @@ export default function ContactPage() {
           Have questions about AI? Want to contribute to our blog? Or perhaps you&apos;re interested in collaborating on an AI project? We&apos;d love to hear from you! Fill out the form below, and our team of AI enthusiasts will get back to you as soon as possible.
         </p>
       </div>
-      <form onSubmit={handleSubmit} className="space-y-6 bg-black p-6 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-gray-300 p-6 rounded-lg shadow-md">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-white">Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-black">Name</label>
           <input
             type="text"
             id="name"
@@ -46,7 +46,7 @@ export default function ContactPage() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-white">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-black">Email</label>
           <input
             type="email"
             id="email"
@@ -58,7 +58,7 @@ export default function ContactPage() {
           />
         </div>
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-white">Subject</label>
+          <label htmlFor="subject" className="block text-sm font-medium text-black">Subject</label>
           <input
             type="text"
             id="subject"
@@ -70,7 +70,7 @@ export default function ContactPage() {
           />
         </div>
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-white">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium text-black">Message</label>
           <textarea
             id="message"
             name="message"
@@ -84,7 +84,7 @@ export default function ContactPage() {
         <div>
           <button
             type="submit"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-white hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-yellow-400 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
             Send Message
             <Send className="ml-2 -mr-1 h-5 w-5" />

@@ -20,15 +20,23 @@ export async function POST(request: Request) {
     let imagePath = '/placeholder.svg?height=400&width=800&text=Colorful+AI+Blog+Post'
 
     if (image) {
+      // Check for file size limit before proceeding
+      if (image.size > 5 * 1024 * 1024) {
+        return NextResponse.json({ error: 'Image size should be less than 5MB' }, { status: 400 })
+      }
+
       const bytes = await image.arrayBuffer()
-      const buffer = Buffer.from(bytes)
+      const buffer = Buffer.from(bytes)  // Ensuring compatibility with Node.js Buffer
 
       const filename = `${Date.now()}-${image.name.replace(/[^a-zA-Z0-9.-]/g, '')}`
       const uploadDir = path.join(process.cwd(), 'public', 'uploads')
-      
+
       try {
+        // Ensure the upload directory exists
         await mkdir(uploadDir, { recursive: true })
-        await writeFile(path.join(uploadDir, filename), buffer)
+        // Convert Buffer to Uint8Array
+        const uint8Array = new Uint8Array(buffer)  // Convert Buffer to Uint8Array
+        await writeFile(path.join(uploadDir, filename), uint8Array)  // Pass Uint8Array to writeFile
         imagePath = `/uploads/${filename}`
       } catch (error) {
         console.error('Error saving image:', error)
@@ -47,6 +55,7 @@ export async function POST(request: Request) {
       comments: []
     }
 
+    // Add the new blog post (ensure addBlogPost handles saving it correctly)
     await addBlogPost(newPost)
 
     return NextResponse.json({ message: 'Blog post submitted successfully', post: newPost }, { status: 201 })
@@ -55,4 +64,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 })
   }
 }
-

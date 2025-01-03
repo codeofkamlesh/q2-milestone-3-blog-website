@@ -27,12 +27,12 @@ export default async function BlogPostPage({ params,  }: PageProps) {
 
   return (
     <article className="max-w-4xl mx-auto">
-      <Image 
-        src={post.image || "/placeholder.svg?height=400&width=800"} 
-        alt={post.title} 
-        width={800} 
-        height={400} 
-        className="w-full h-64 object-cover rounded-lg shadow-lg mb-8" 
+      <Image
+        src={post.image || "/placeholder.svg?height=400&width=800"}
+        alt={post.title}
+        width={800}
+        height={400}
+        className="w-full h-64 object-cover rounded-lg shadow-lg mb-8"
       />
       <h1 className="text-4xl font-bold mb-4 text-heading">{post.title}</h1>
       <div className="flex items-center text-gray-600 mb-8">
